@@ -12,7 +12,6 @@ $(document).ready(function(){
     if($('#BasketdetailedBoxbdy .c1').length > 0) {
         currentTxt = $('#BasketdetailedBoxbdy .c1').text();
         currentTxt = currentTxt.replace('Antal varer:', '').replace(/\s/g, '');
-        console.log(currentTxt);
         $('#BasketdetailedBoxbdy').prepend('<span class="item-amount">'+currentTxt+'</span>');
     }
 

@@ -247,6 +247,21 @@ a:hover {
     font-family: arial;
 }
 
+/* Page: content */
+
+.page-content-pane,
+.page-content-pane span,
+.page-content-pane a {
+    color: #333333 !important;
+    font-size: 13px !important;
+    font-weight: 300;
+    font-family: arial;
+}
+
+.page-content-pane a {
+    text-decoration: underline;
+}
+
 /* less than 1200px: smaller desktop screens */
 @media (max-width: 1200px){
 
@@ -260,6 +275,11 @@ a:hover {
       margin:0 auto;
       max-width:100%;
       width:100%;
+    }
+
+    /* Page: content */
+    .page-content-pane {
+        padding: 15px;
     }
 
     /* Header */
