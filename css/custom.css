@@ -117,7 +117,6 @@ a:hover {
 }
 
 /* Template: page-menu-top */
-
 .page-menu-top {
     background-color: #000;
     text-align: left;
@@ -133,8 +132,11 @@ a:hover {
     display: inline-block;
 }
 
-/* Header: topbanner-texts */
+.page-menu-mobile {
+    display: none;
+}
 
+/* Header: topbanner-texts */
 .topbanner-texts {
     margin-top: 50px;
 }
@@ -167,6 +169,7 @@ a:hover {
     text-align: left;
     padding-left: 68px;
     margin-left: 43px;
+    position: relative;
 }
 
 #BasketdetailedBoxbdy .c1 {
@@ -190,4 +193,210 @@ a:hover {
     color: #333333;
     font-size: 12px;
     font-weight: bold;
+}
+
+#BasketdetailedBoxbdy > span.item-amount {
+    position: absolute;
+    left: 20px;
+    top: -8px;
+    display: block;
+    background-color: #10192e;
+    font-size: 12px;
+    color: #fff;
+    font-weight: bold;
+    font-family: arial;
+    border-radius: 50%;
+    width: 27px;
+    line-height: 26px;
+    text-align: center;
+}
+
+/* Menu: yellow bar */
+
+.yellow-bar {
+    height: 8px;
+    background-color: #fbed20;
+    position: relative;
+}
+
+.yellow-bar:before {
+    content: "\f0d8";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    position: absolute;
+    top: -14px;
+    left: 46px;
+    color: #fbed20;
+    font-size: 20px;
+}
+
+/* Footer: footer */
+
+.footer-inner {
+    background-color: #000000;
+    padding: 22px 0;
+    margin-top: 75px;
+}
+
+.footer-inner,
+.footer-inner a {
+    font-size: 16px;
+    color: #efeeee;
+    font-family: arial;
+}
+
+/* less than 1200px: smaller desktop screens */
+@media (max-width: 1200px){
+
+    /* Layout */
+    .page-banner,
+    .banner-inner,
+    .page-header-content,
+    .page-menu-top,
+    .page-content,
+    .footer-inner{
+      margin:0 auto;
+      max-width:100%;
+      width:100%;
+    }
+
+    /* Header */
+    .page-banner {
+        text-align: center;
+    }
+
+    .banner-inner,
+    .page-header-content {
+        text-align: center;
+    }
+
+    .page-header-content {
+        width: auto;
+        text-align: center;
+        margin: 0 auto 20px auto;
+        float:none;
+    }
+
+    #BasketdetailedBox {
+        margin-top: 5px;
+        margin-right: 0px;
+    }
+
+    .topbanner-texts {
+        margin-top: 20px;
+    }
+
+}
+
+@media (max-width: 1100px){
+
+    /* Topmenu: links */
+    .page-menu-top a {
+        font-size: 14px;
+        margin: 0 22px 0 24px;
+    }
+
+    .yellow-bar:before {
+        left: 44px;
+    }
+
+}
+
+/* Tablet */
+@media (max-width: 1024px){
+
+    #BasketdetailedBox,
+    .yellow-bar:before,
+    #ddMenu {
+        display: none;
+    }
+
+    /* Menu: tablet/mobile */
+    .page-menu-mobile {
+        display: block;
+    }
+
+    .page-menu-top a {
+        line-height: normal;
+    }
+
+    .page-menu-mobile li {
+        display: inline-block;
+        width: 50%;
+        text-align: center;
+        vertical-align: middle;
+        height: 52px;
+    }
+
+    .page-menu-mobile li a.toggle-basket,
+    .page-menu-mobile li a.toggle-nav {
+        margin-top: 10px;
+        display: block;
+    }
+
+    .page-menu-mobile li i,
+    .page-menu-mobile li span {
+        font-size: 30px;
+    }
+
+    .page-menu-mobile li span {
+        font-size: 20px;
+    }
+
+    .element-mini-mobile-basket {
+        position: relative;
+    }
+
+    .page-menu-mobile li span.element-mini-mobile-basket-total {
+        position: absolute;
+        right: -6px;
+        top: -12px;
+        display: block;
+        background-color: #ebdc06;
+        font-size: 12px;
+        color: #fff;
+        font-weight: bold;
+        font-family: arial;
+        border-radius: 50%;
+        width: 20px;
+        line-height: 20px;
+        text-align: center;
+    }
+
+    /* Offcanvas: Bannner  */
+
+    .banner-offcanvas {
+        display: block;
+        text-align: center;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    /* Menu: info-menu-left */
+
+    .info-menu-left li a {
+        margin: 5px 15px;
+        color: #333333;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        height: 35px;
+        line-height: 35px;
+    }
+
+}
+
+/* Mobile */
+@media (max-width: 700px){
+
+    /* Topbanner: texts */
+
+    .topbanner-texts li {
+        display: block;
+        text-align: center;
+        margin: 0 0 6px 0;
+    }
+
 }
