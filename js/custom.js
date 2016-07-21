@@ -31,4 +31,10 @@ $(document).ready(function(){
 
     }
 
+    //Move frontpage-content to #precontentContainer
+    if($('.frontpage-content').length > 0) {
+        newPlace = $('.frontpage-content').remove().clone();
+        $('#precontentContainer').prepend(newPlace);
+    }
+
 });
