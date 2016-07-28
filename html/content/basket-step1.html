@@ -1,0 +1,45 @@
+<eSeller:If IsFalse="Basket:IsEmpty">
+    <div class="basket-content">
+        <eSeller:Control ControlType="BasketMessages" ControlId="BasketMessages" />
+        <div class="basket-top clearfix">
+            <h1>
+                <eSeller:Select Text="label_page_name" />
+            </h1>
+            <div class="basket-next">
+                <eSeller:Control ControlType="BasketActionButton" ControlId="Next" Mode="NavigateNext" CssClass="buttonNavNext" CausesValidation="True" >
+                    <eSeller:Attribute Name="Text" Text="button_next(basket)" />
+                </eSeller:Control>
+            </div>
+        </div>
+        <div class="basket-details">
+            <eSeller:Control ControlId="Basket" ControlType="BasketDetails" />
+        </div>
+        <div class="basket-totals">
+            <eSeller:Control ControlId="Totals" ControlType="BasketTotals"></eSeller:Control>
+        </div>
+        <div class="basket-bottom clearfix">
+            <div class="basket-next">
+                <eSeller:Control ControlType="BasketActionButton" ControlId="Next2" Mode="NavigateNext" CssClass="buttonNavNext" CausesValidation="True" >
+                    <eSeller:Attribute Name="Text" Text="button_next(basket)" />
+                </eSeller:Control>
+            </div>
+            <div class="basket-update">
+                <eSeller:Control ControlType="BasketActionButton" ControlId="UpdateBasket" Mode="UpdateBasket" CausesValidation="True" CssClass="buttonUpdateBasket" />
+            </div>
+            <div class="basket-clear">
+                <eSeller:Control ControlType="BasketActionButton" ControlId="ClearBasket" Mode="ClearBasket" CausesValidation="True" CssClass="buttonClearBasket" />
+            </div>
+            <div class="basket-prev">
+                <eSeller:Control ControlType="BasketActionButton" ControlId="PreviousStep" Mode="NavigatePrevious" CssClass="buttonNavPrev" />
+            </div>
+        </div>
+    </div>
+</eSeller:If>
+
+<eSeller:If IsTrue="Basket:IsEmpty">
+  <div style="text-align: center">
+    <eSeller:Select AppText="basket_is_empty" />
+    <br />
+    <eSeller:Control ControlType="BasketActionButton" ControlId="PreviousStep" Mode="NavigatePrevious" DuplicateID="True" CssClass="buttonNavPrev" />
+  </div>
+</eSeller:If>

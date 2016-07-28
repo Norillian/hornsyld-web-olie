@@ -1,0 +1,93 @@
+<div class="product-info-container">
+    <div class="product-images">
+        <!-- <eSeller:Control ControlID="productimages" ControlType="ProductImages" />-->
+        <img src="/images/editor/Responsive/Web-olie_product.png" alt="" />
+    </div>
+    <div class="product-info">
+        <h1 style="display:inline;" class="HeaderBar">
+            <eSeller:Select Value-Of="Product:ProductName" />
+        </h1>
+        <eSeller:if istrue="Product:ShowProductID">
+            <div class="product-id">
+                <eSeller:Select text="label_productid" />&amp;nbsp;<eSeller:Select Value-Of="Product:ProductID" />
+            </div>
+        </eSeller:if>
+        <eSeller:if istrue="Product:ShowExtProductID">
+            <div class="product-id">
+                <eSeller:Select text="label_extproductid" />&amp;nbsp;<eSeller:Select Value-Of="Product:ExtProductID" />
+            </div>
+        </eSeller:if>
+        <eSeller:if istrue="Product:ShowAltExtProductID">
+            <div class="product-id">
+                <eSeller:Select text="label_altextproductid" />&amp;nbsp;<eSeller:Select Value-Of="Product:AltExtProductID" />
+            </div>
+        </eSeller:if>
+        <eSeller:if istrue="Product:ShowProductEAN">
+            <div class="product-id">
+                <eSeller:Select text="label_ean" />&amp;nbsp;<eSeller:Select Value-Of="Product:EAN" />
+            </div>
+        </eSeller:if>
+        <eSeller:If istrue="Product:ShowSalesprice">
+            <div class="etPrice">
+                <eSeller:If istrue="Product:isHeatingOil">
+                    <span><eSeller:Select text="label_priceHeatingoil" /></span>
+                </eSeller:If>
+                <eSeller:If isfalse="Product:isHeatingOil">
+                    <eSeller:Select text="label_price" />
+                </eSeller:If>
+                    <b><eSeller:Control ControlID="SalesPrice" ControlType="Productprice" /></b><br />
+                <eSeller:If istrue="Product:isHeatingOil">
+                    <span><eSeller:Select text="label_listpriceHeatingoil" /></span>
+                    <b><eSeller:Control ControlID="ListPrice" ControlType="Productprice" /></b>
+                </eSeller:If>
+            </div>
+        </eSeller:If>
+        <eSeller:If isnotempty="Product:ProductLongDescription">
+            <div id="etLongDesc" class="content product-desc">
+                <eSeller:Css Name="#etLongDesc" Selector="#etLongDesc" GroupName="#etgTexts" SelectorGroup="12" />
+                <eSeller:Select Value-Of="Product:ProductLongDescription" />
+            </div>
+        </eSeller:If>
+        <eSeller:If istrue="Product:ShowAddToBasket">
+            <div class="etBasket">
+                <eSeller:Control ControlID="QtySelector" ControlType="QuantitySelector" />
+                <eSeller:BasketButton ControlID="btnBasket">
+                    <eSeller:Attribute Name="ToolTip" text="tooltip_add_to_basket" />
+                </eSeller:BasketButton>
+                <div class="etBasket_Footer">
+                    Ved betaling skal du under <span>'bemærkninger'</span> beskrive hvor tanken står - <b>Vi leverer minimum 700 ltr.</b>
+                </div>
+            </div>
+        </eSeller:If>
+    </div>
+</div>
+
+<div class="frontpage-boxes">
+    <div class="container">
+        <i class="fa fa-check-circle"></i>
+        <span>Lavt svovlindhold</span>
+    </div>
+    <div class="container">
+        <i class="fa fa-check-circle"></i>
+        <span>Frostsikret ned til -20 grader</span>
+    </div>
+    <div class="container">
+        <i class="fa fa-check-circle"></i>
+        <span>Kan bruges i alle slags tanke</span>
+    </div>
+    <div class="container">
+        <i class="fa fa-check-circle"></i>
+        <span>Vi krediterer hvis du har<br />bestilt for meget</span>
+    </div>
+    <div class="container">
+        <i class="fa fa-check-circle"></i>
+        <span>Alle ordrer leveres<br />inden for 5 hverdage.</span>
+    </div>
+    <div class="container">
+        <i class="fa fa-check-circle"></i>
+        <span>Frit leveret i hele Danmark<br />(Brofaste øer)</span>
+    </div>
+</div>
+<div class="about-text">
+    <eSeller:Select Value-Of="CmsSpecialPages:Text(&quot;aboutWebOlie&quot;)" />
+</div>
