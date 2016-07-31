@@ -602,6 +602,73 @@ a:hover {
     font-size: 16px !important;
 }
 
+/* Basket: step 3 */
+
+.basket-step3 .basket-top h1 {
+    display: block;
+    width: 100%;
+}
+
+.basket-step3 .basket-bottom .basket-next input {
+    width: 230px;
+}
+
+.basket-content .payment-address-info,
+.basket-content .delivery-address-info {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+}
+
+.basket-content table td:first-child {
+    width: 120px;
+    font-weight: bold;
+    padding: 8px 0;
+}
+
+.basket-content table td input,
+.basket-content table td select {
+    line-height: 28px;
+    height: 28px;
+    color: #333;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 2px;
+    width: 100%;
+}
+
+.order-remarks select,
+.order-remarks input {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    min-width: 240px;
+    padding: 2px;
+    line-height: 28px;
+    height: 28px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+
+.order-remarks textarea {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    min-width: 240px;
+    padding: 2px;
+    margin-bottom: 10px;
+    min-height: 80px;
+}
+
+.order-remarks {
+    margin-bottom: 20px;
+}
+
+.basket-step4 .basket-totals .ec38TableTotals {
+    margin: 0 0 0 auto;
+}
+
 /* less than 1200px: smaller desktop screens */
 @media (max-width: 1200px){
 
@@ -889,6 +956,21 @@ a:hover {
 
     .basket-totals .ec38TableTotals td {
         width: 50%;
+    }
+
+    /* Basket: step 3 */
+
+    .basket-step3 .basket-bottom .basket-next input {
+        width: 100%;
+    }
+
+    .basket-content .payment-address-info,
+    .basket-content .delivery-address-info {
+        width: 100%;
+    }
+
+    .basket-step3 .basket-top h1 {
+        font-size: 24px;
     }
 
 }

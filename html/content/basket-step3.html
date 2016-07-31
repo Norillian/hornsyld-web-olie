@@ -1,0 +1,64 @@
+<eSeller:If IsFalse="Basket:IsEmpty">
+    <div class="basket-content basket-step3">
+        <div class="basket-top clearfix">
+            <h1 id="ctl00_plhContent_lblOrderHelp">
+              <eSeller:Select Text="label_order_help" />
+            </h1>
+        </div>
+        <div class="basket-content">
+            <div class="terms-content">
+                <eSeller:Control ControlType="AcceptTerms" ControlId="AcceptTerms" CssClass="checkbox" LabelCssClass="labelForCheckbox" />&#160;<a href="/page/terms.aspx">(læs mere her)</a>
+            </div>
+            <!--<div class="phone-search">
+                <eSeller:Select Text="label_phone_search" TextSourceControlId="TelefonOpslag" />
+                <eSeller:Control ControlType="AddressLookup" ControlId="TelefonOpslag" />
+                <eSeller:Control ControlType="GenericButton" ControlId="TlfOpslagKnap" WorksOn="TelefonOpslag" ButtonType="Link" />
+            </div>-->
+            <div class="payment-address-info">
+                <h2><eSeller:Select Text="label_invoice_head" TextSourceControlId="Betalingsadresse" /></h2>
+                <eSeller:Control ControlId="Betalingsadresse" ControlType="PaymentAddress" InputMode="Updatable" />
+            </div>
+            <div class="delivery-address-info">
+                <h2><eSeller:Select Text="label_delivery_head" TextSourceControlId="Leveringsadresse" /></h2>
+                <div class="choose-delivery-info"><eSeller:Control ControlType="ShipmentAddressCheckbox" ControlId="BrugLeveringsadresseValg"  /></div>
+                <eSeller:Control ControlId="Leveringsadresse" ControlType="ShipmentAddress" InputMode="Updatable"/>
+            </div>
+            <div class="payment-info">
+                <h2><eSeller:Select Text="label_payment_method" TextSourceControlId="Betalingsmåde" /></h2>
+                <eSeller:Control ControlType="PaymentMethodSelect" ControlId="Betalingsmåde" />
+            </div>
+            <div class="delivery-info">
+                <h2><eSeller:Select Text="label_delivery_method" TextSourceControlId="Leveringsmåde" /></h2>
+                <eSeller:Control ControlType="ShipmentMethodSelect" ControlId="Leveringsmåde" />
+            </div>
+            <div class="order-remarks">
+                <h2><eSeller:Select Text="label_order_remarks" TextSourceControlId="Ordrebemærkning"/></h2>
+                <eSeller:Control ControlType="OrderingRemarks" ControlId="Ordrebemærkning"  CssClass="txtOrderRemarks" MaxLength="80" />
+            </div>
+        </div>
+        <div class="basket-bottom clearfix">
+            <div class="basket-prev">
+                <eSeller:Control ControlType="BasketActionButton" ControlId="PreviousStep" Mode="NavigatePrevious" CssClass="buttonNavPrev" />
+            </div>
+            <div class="basket-next">
+                <eSeller:Control ControlType="BasketActionButton" ControlId="NextStep" Mode="NavigateNext" CssClass="buttonNavNext" CausesValidation="True" CausesSave="True" >
+                  <eSeller:Attribute Name="Text" Text="button_next(address)" />
+                </eSeller:Control>
+            </div>
+        </div>
+    </div>
+    <div style="visibility: hidden; position: absolute;">
+        <eSeller:select value-of="CmsSpecialPages:GetPage(&quot;SalesAndDeleveryTerms&quot;).CMSSpecialPageContent" />
+    </div>
+</eSeller:If>
+
+<eSeller:If IsTrue="Basket:IsEmpty">
+  <div style="text-align: center">
+    <eSeller:Select AppText="basket_is_empty" />
+    <br />
+    <eSeller:Control ControlType="NavigateButton" ControlId="JumpOutButton" Command="Frontpage" CssClass="buttonNavPrev" >
+      <eSeller:Attribute Name="Text" AppText="Navigate_goto_frontpage" />
+    </eSeller:Control>
+
+  </div>
+</eSeller:If>

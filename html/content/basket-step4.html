@@ -1,0 +1,78 @@
+<eSeller:If IsFalse="Basket:IsEmpty">
+    <div class="basket-content basket-step4">
+        <div class="basket-top clearfix">
+            <h1>
+                Accepter ordre
+            </h1>
+        </div>
+        <div class="basket-content">
+            <div class="payment-address-info">
+                <h2><eSeller:Select Text="label_invoice_head" TextSourceControlId="Betalingsadresse" /></h2>
+                <eSeller:Control ControlId="Betalingsadresse" ControlType="PaymentAddress" InputMode="Viewonly"  />
+            </div>
+            <div class="delivery-address-info">
+                <h2><eSeller:Select Text="label_delivery_head" TextSourceControlId="Leveringsadresse" /></h2>
+                <eSeller:If IsTrue="Basket:IsShipmentAddressSpecified">
+                  <eSeller:Control ControlId="Leveringsadresse" ControlType="ShipmentAddress" InputMode="Viewonly" />
+                </eSeller:If>
+                <eSeller:If IsFalse="Basket:IsShipmentAddressSpecified">
+                  <eSeller:Select Text="label_delivery_not_specified" TextSourceControlId="Leveringsadresse"/>
+                </eSeller:If>
+            </div>
+            <div class="payment-info">
+                <h2><eSeller:Select Text="label_payment_method" TextSourceControlId="Betalingsmåde" /></h2>
+                <eSeller:Control ControlType="PaymentMethodSelect" ControlId="Betalingsmåde" InputMode="Viewonly" />
+            </div>
+            <div class="delivery-info">
+                <h2><eSeller:Select Text="label_delivery_method" TextSourceControlId="Leveringsmåde" /></h2>
+                <eSeller:Control ControlType="ShipmentMethodSelect" ControlId="Leveringsmåde" InputMode="Viewonly" />
+            </div>
+            <div class="order-remarks">
+                <h2><eSeller:Select Text="label_order_remarks" TextSourceControlId="Ordrebemærkning"/></h2>
+                <eSeller:Control ControlType="OrderingRemarks" ControlId="Ordrebemærkning"  InputMode="Viewonly" />
+            </div>
+            <div class="basket-details">
+                <eSeller:Control ControlId="Basket" ControlType="BasketDetails" InputMode="ViewOnly" />
+            </div>
+            <div class="basket-totals">
+                <eSeller:Control ControlId="Totals" ControlType="BasketTotals"></eSeller:Control>
+            </div>
+        </div>
+        <div class="basket-bottom clearfix">
+            <div class="basket-prev">
+                <eSeller:Control ControlType="BasketActionButton" ControlId="PreviousStep" Mode="NavigatePrevious" CssClass="buttonNavPrev" />
+            </div>
+            <div class="basket-next">
+                <eSeller:Control ControlType="BasketActionButton" ControlId="NextStep" Mode="NavigateNext" CssClass="buttonNavNext" CausesValidation="True" ></eSeller:Control>
+            </div>
+        </div>
+    </div>
+</eSeller:If>
+
+<!--<eSeller:If IsFalse="Basket:IsEmpty">
+  <table width="100%">
+    <tr>
+      <td class="content" valign="top" align="left" colspan="2">
+        <span id="ctl00_plhContent_lblOrderHelp">
+          <eSeller:If IsTrue="Basket:IsOnlinePayment">
+            <eSeller:Select Text="label_order_help" />
+          </eSeller:If>
+          <eSeller:If IsFalse="Basket:IsOnlinePayment">
+            <eSeller:Select Text="label_order_help_Cash" />
+          </eSeller:If>
+        </span>
+      </td>
+    </tr>
+  </table>
+</eSeller:If>-->
+
+<eSeller:If IsTrue="Basket:IsEmpty">
+  <div style="text-align: center">
+    <eSeller:Select AppText="basket_is_empty" />
+    <br />
+    <eSeller:Control ControlType="NavigateButton" ControlId="JumpOutButton" Command="Frontpage" CssClass="buttonNavPrev" >
+      <eSeller:Attribute Name="Text" AppText="Navigate_goto_frontpage" />
+    </eSeller:Control>
+
+  </div>
+</eSeller:If>
