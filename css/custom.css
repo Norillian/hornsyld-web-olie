@@ -861,9 +861,25 @@ a:hover {
 
     /* Page: frontpage */
 
-    .frontpage-content > div.product-image img {
-        max-width: 100%;
-        height: auto;
+    .page-banner {
+        max-height: 95px;
+    }
+
+    .frontpage-content > div.product-image img,
+    .topbanner-texts {
+        display: none;
+    }
+
+    .frontpage-content > div.product-info > span.small-text,
+    .frontpage-content > div.product-info > span.price {
+        margin-top: 10px;
+        font-size: 26px !important;
+        display: block;
+    }
+
+    .frontpage-content > div.product-info > span.paragraph-text {
+        font-size: 12px !important;
+        margin: 10px 0 15px 0px;
     }
 
     .frontpage-content > div.product-image,
@@ -909,6 +925,15 @@ a:hover {
 
     /* Page: product-info */
 
+    .product-info-container > div.product-images,
+    .product-info-container > div.product-info .product-desc h4 {
+        display: none;
+    }
+
+    .product-info-container {
+        margin-top: 0px;
+    }
+
     .product-info-container > div.product-info,
     .product-info-container > div.product-images {
         width: 100%;
@@ -928,6 +953,37 @@ a:hover {
         background-size: 35px;
         background-position: 10% center;
         padding: 0;
+    }
+
+    .product-info-container > div.product-info h1 {
+        font-size: 16px;
+    }
+
+    .product-info-container > div.product-info .product-id {
+        font-size: 10px;
+        margin-bottom: 5px;
+        font-style: italic;
+    }
+
+    .product-info-container > div.product-info .product-desc p,
+    .product-info-container > div.product-info .product-desc span {
+        font-size: 10px !important;
+    }
+
+    .product-info-container > div.product-info .etBasket select {
+        margin-top: 0px;
+    }
+
+    .product-info-container > div.product-info .etPrice span,
+    .product-info-container > div.product-info .etPrice b {
+        font-size: 14px !important;
+        margin-bottom: 0;
+    }
+
+    .about-text p,
+    .about-text a {
+        font-size: 10px !important;
+        margin-top: 10px;
     }
 
     /* Basket: step 1 */
