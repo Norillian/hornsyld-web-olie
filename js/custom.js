@@ -1,5 +1,26 @@
 $(document).ready(function(){
 
+    //Change default value
+    if($('.product-info-container > div.product-info .etBasket select').length > 0) {
+        //$('.product-info-container > div.product-info .etBasket select').val('1000').change();
+    }
+
+    //Change pointer position in the yellow bar
+    if($('#ddMenu').length > 0) {
+        var pathname = window.location.pathname;
+        pathname = pathname.replace('%C3%A5', 'å').replace('%C3%B8', 'ø').replace('%C3%A6', 'æ');
+        faIcon = $('<i class="fa fa-caret-up menu-pointer"></i>');
+
+        $( "#ddMenu a" ).each(function( index ) {
+            if($(this).attr('href') === pathname && $(this).attr('href')) {
+                var iconPos = $(this).width() / 2;
+                iconPos = iconPos - 5;
+                $(this).append(faIcon);
+                $('.menu-pointer').css('left', iconPos + 'px');
+            }
+        });
+    }
+
     // Toggle Navigation (Off-Canvas)
     $('.toggle-nav').on('click',function(e){
 

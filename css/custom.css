@@ -128,6 +128,10 @@ a:hover {
     text-align: left;
 }
 
+.page-menu-top span {
+    display: inline-block;
+}
+
 .page-menu-top a {
     color: #ffffff;
     font-size: 16px;
@@ -136,6 +140,7 @@ a:hover {
     margin: 0 22px 0 24px;
     font-weight: 600;
     display: inline-block;
+    position: relative;
 }
 
 .page-menu-top a:hover {
@@ -229,8 +234,16 @@ a:hover {
     position: relative;
 }
 
+.menu-pointer {
+    text-decoration: inherit;
+    position: absolute;
+    bottom: -6px;
+    color: #fbed20;
+    font-size: 20px;
+}
+
 .yellow-bar:before {
-    content: "\f0d8";
+    /*content: "\f0d8";
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
@@ -239,7 +252,7 @@ a:hover {
     top: -14px;
     left: 46px;
     color: #fbed20;
-    font-size: 20px;
+    font-size: 20px;*/
 }
 
 /* Footer: footer */
@@ -347,6 +360,7 @@ a:hover {
     border-right: solid 1px #bfbfbf;
     border-bottom: solid 1px #bfbfbf;
     min-height: 124px;
+
 }
 
 .frontpage-boxes .container i {
@@ -356,11 +370,17 @@ a:hover {
 }
 
 .frontpage-boxes .container span {
-    display: block;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
     color: #333333 !important;
     font-size: 18px !important;
     font-weight: bold;
     font-family: arial;
+    padding: 0px 5px;
+    vertical-align: top;
 }
 
 .about-text p {
@@ -669,6 +689,32 @@ a:hover {
     margin: 0 0 0 auto;
 }
 
+/* Page: user reviews */
+
+.fulluserReviewHead {
+    color: #333333;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 10px;
+    display: block !important;
+}
+
+.fullreview {
+    max-width: 320px;
+    margin: 20px 0 30px;
+}
+
+.fullreviewMainRow {
+    color: #333333;
+    font-size: 12px;
+    font-style: normal;
+}
+
+.fullreviewStars {
+    margin-top: 10px;
+}
+
 /* less than 1200px: smaller desktop screens */
 @media (max-width: 1200px){
 
@@ -776,9 +822,23 @@ a:hover {
     }
 
     .frontpage-content > div.product-info > a {
-        width: 410px;
-        font-size: 33px !important;
+        width: 90%;
         line-height: 72px;
+        font-size: 26px !important;
+        background-position: 6% center;
+        background-size: 45px 34px;
+    }
+
+    .frontpage-content > div.product-image {
+        max-width: 40%;
+    }
+
+    .frontpage-content > div.product-info {
+        max-width: 60%;
+    }
+
+    .frontpage-content > div.product-image img {
+        max-width: 100%;
     }
 
     /* Menu: tablet/mobile */
@@ -819,17 +879,17 @@ a:hover {
 
     .page-menu-mobile li span.element-mini-mobile-basket-total {
         position: absolute;
-        right: -6px;
-        top: -12px;
+        right: -12px;
+        top: -7px;
         display: block;
         background-color: #ebdc06;
         font-size: 12px;
-        color: #fff;
+        color: #000;
         font-weight: bold;
         font-family: arial;
         border-radius: 50%;
-        width: 20px;
-        line-height: 20px;
+        width: 25px;
+        line-height: 25px;
         text-align: center;
     }
 
@@ -859,6 +919,12 @@ a:hover {
 /* Mobile */
 @media (max-width: 700px){
 
+    /* Page: user reviews */
+
+    .fulluserReviewHead {
+        font-size: 30px;
+    }
+
     /* Page: frontpage */
 
     .page-banner {
@@ -879,7 +945,7 @@ a:hover {
 
     .frontpage-content > div.product-info > span.paragraph-text {
         font-size: 12px !important;
-        margin: 10px 0 15px 0px;
+        margin: 10px 0 30px 0px;
     }
 
     .frontpage-content > div.product-image,
@@ -913,6 +979,11 @@ a:hover {
         border-right: solid 1px #bfbfbf;
         border-bottom: solid 1px #bfbfbf;
         min-height: 124px;
+    }
+
+    .frontpage-content > div.product-image,
+    .frontpage-content > div.product-info {
+        max-width: 100%;
     }
 
     /* Topbanner: texts */
