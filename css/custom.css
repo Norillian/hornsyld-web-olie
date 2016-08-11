@@ -5,6 +5,11 @@
   display:none;
 }
 
+input.disabled {
+    background-color: #ccc;
+    border: solid 1px #aaa;
+}
+
 body {
   background-image:none !important;
   font-family: Arial, sans-serif !important;
